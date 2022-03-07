@@ -57,16 +57,17 @@ function handleGuess(userGuess, correctSpot) {
     // first, right after clicking, we need to remove the emoiji face from the previous hiding place that way we don't end up with more than one emoji face
 
     // we can do that by removing the .face class from all containers
-    shedContainer.classList.remove('.face');
-    treeContainer.classList.remove('.face');
-    boulderContainer.classList.remove('.face');
+    shedContainer.classList.remove('face');
+    treeContainer.classList.remove('face');
+    boulderContainer.classList.remove('face');
 
     // then increment the guesses
 
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
-
+    const correctSpotEl = document.getElementById(correctSpot + '-container');
 
     // then add the .face css class to that element so that the face shows up
+    correctSpotEl.classList.add('face');
 
     // then if the user guess is correct, increment the correct guesses
     totalGuesses++;
