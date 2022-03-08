@@ -109,3 +109,13 @@ function updateGuessCount(userGuess) {
     shedGuessesEl.textContent = shedGuesses;
     boulderGuessesEl.textContent = boulderGuesses;
 }
+
+function addGuessHistory(gameNumber, userGuess, hidingPlace) {
+    const newRow = guessHistoryTable.insertRow(1);
+    newRow.insertCell(0).innerHTML = gameNumber;
+    newRow.insertCell(1).innerHTML = userGuess;
+    newRow.insertCell(2).innerHTML = hidingPlace;
+    if (userGuess === hidingPlace) {
+        newRow.classList.add('correctGuess');
+    }
+}
