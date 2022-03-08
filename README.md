@@ -24,6 +24,16 @@
 2) Pass the correct arguments to the handleGuess functions
 3) Finish the handleGuess declaration
 
+stretch goal ideas (just for fun):
+- keep track of how many times the user guesses each spot (tree: 4, shed: 3, etc)
+    1. Add HTML elements below each button displaying number of guesses
+    2. Create function that countsGuess
+    3. Write function to run for each button
+    4. Update DOM to show guess count number
+- imagine a hide and seek game with two hiders. make it so there are 5 hiding spots and _two_ places count as correct (with styles correctly applied).
+- track and display a 'history' of all the user's choices
+- track and display a history of all the actual hiding spots
+
 [Buggy Hide and Seek](https://github.com/alchemycodelab/buggy-js-hide-and-seek/)
 
 ### Live Example:
