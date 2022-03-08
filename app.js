@@ -1,4 +1,3 @@
-App.js
 // import functions and grab DOM elements
 const shedButton = document.getElementById('shed-button');
 const treeButton = document.getElementById('tree-button');
