@@ -139,9 +139,9 @@ footer {
     position: absolute;
 }
 
-td {
+tr {
     color: black;
-    background-color: lightblue;
+    background-color: lightcoral;
 }  
 
 th {
@@ -149,3 +149,8 @@ th {
     color: white;
     background-color: black;
 }  
+
+.correctGuess {
+    color: white;
+    background-color: green;
+} 

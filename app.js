@@ -30,7 +30,7 @@ shedButton.addEventListener('click', () => {
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess('shed', correctSpot);
     updateGuessCount('shed');
-    addGuessHistory();
+    addGuessHistory(totalGuesses, 'shed', correctSpot);
 });
 
 treeButton.addEventListener('click', () => {
@@ -39,6 +39,7 @@ treeButton.addEventListener('click', () => {
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess('tree', correctSpot);
     updateGuessCount('tree');
+    addGuessHistory(totalGuesses, 'tree', correctSpot);
 });
 
 boulderButton.addEventListener('click', () => {
@@ -47,6 +48,7 @@ boulderButton.addEventListener('click', () => {
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
     handleGuess('boulder', correctSpot);
     updateGuessCount('boulder');
+    addGuessHistory(totalGuesses, 'boulder', correctSpot);
 });
 
 
@@ -113,9 +115,12 @@ function updateGuessCount(userGuess) {
     boulderGuessesEl.textContent = boulderGuesses;
 }
 
-function addGuessHistory() {
+function addGuessHistory(gameNumber, userGuess, hidingPlace) {
     const newRow = guessHistoryTable.insertRow(1);
-    newRow.insertCell(0).innerHTML = 1;
-    newRow.insertCell(1).innerHTML = 'shed';
-    newRow.insertCell(2).innerHTML = 'tree';
+    newRow.insertCell(0).innerHTML = gameNumber;
+    newRow.insertCell(1).innerHTML = userGuess;
+    newRow.insertCell(2).innerHTML = hidingPlace;
+    if (userGuess === hidingPlace) {
+        newRow.classList.add('correctGuess');
+    }
 }
