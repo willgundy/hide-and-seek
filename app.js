@@ -11,9 +11,16 @@ const totalEl = document.getElementById('total');
 const lossesEl = document.getElementById('losses');
 const winsEl = document.getElementById('wins');
 
+const treeGuessesEl = document.getElementById('treeGuessCount');
+const shedGuessesEl = document.getElementById('shedGuessCount');
+const boulderGuessesEl = document.getElementById('boulderGuessCount');
 
 let correctGuesses = 0;
 let totalGuesses = 0;
+let treeGuesses = 0;
+let shedGuesses = 0;
+let boulderGuesses = 0;
+
 
 shedButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
@@ -79,4 +86,23 @@ function handleGuess(userGuess, correctSpot) {
     totalEl.textContent = totalGuesses;
     winsEl.textContent = correctGuesses;
     lossesEl.textContent = totalGuesses - correctGuesses;
+}
+
+function updateGuessCount(userGuess) {
+    switch (userGuess) {
+        case 'shed':
+            shedGuesses++;
+            break;
+        case 'tree':
+            treeGuesses++;
+            break;
+        case 'boulder':
+            boulderGuesses++;
+            break;
+        default:
+            break;
+    }
+    treeGuessesEl.textContent = treeGuesses;
+    shedGuessesEl.textContent = shedGuesses;
+    boulderGuessesEl.textContent = boulderGuesses;
 }
